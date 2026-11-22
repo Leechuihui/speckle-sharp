@@ -746,7 +746,7 @@ public partial class ConverterRhinoGh : ISpeckleConverter
       case GisFeature _:
       case Level _:
       case Dimension _:
-      case Collection c when !c.collectionType.ToLower().Contains("model"):
+      case Collection c when !(c.collectionType?.ToLower().Contains("model") ?? false):
         return true;
 #endif
 
